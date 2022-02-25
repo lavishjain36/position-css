@@ -1,68 +1,96 @@
-class Person{
-    static CompanyName="Amazon";//static Member Variable
-    constructor(name,age,address){
-        //set the values for 3 properties
-        this.name=name;
-        this.age=age;
-        this.address=address;
+// class Rectangle{
+// constructor(length,breadth){
+// this.length=length;
+// this.breadth=breadth;
+
+// }
+
+// //logic to get area of rectangle
+// getArea(){
+//     return this.length*this.breadth;
+
+// }
+// }
+
+
+
+// class Square extends Rectangle{
+// constructor(length){
+//     super(length,length);
+
+// }
+
+// getPerimeter(){
+// return 2*this.length+this.breadth;
+// }
+
+// }
+
+
+// //create an object for rectangle
+// let rectobj=new Rectangle(10,20);
+// console.log(rectobj.getArea());
+
+
+// //create an object for square 
+// let squareobj=new Square(10);
+
+// console.log(squareobj.getArea());
+
+
+
+// // DRY=>Dont Repeat Yourself
+
+
+// Polymorphism=>
+// poly+Morphism=>
+// Inheritance=>
+// Same method which can be used on different objects
+// drive()
+
+// class Car{
+// drive(){
+//  console.log("This is slow Running Method")
+// }
+// }
+
+// class MotorCylce extends Car{
+// drive(){
+//     console.log("This is Fast Running Method")
+// }
+// }
+
+
+// //create an object for car
+// let car1=new Car(); 
+// // car1.drive();
+
+// //create an object for MotorBike 
+// let motorbike=new MotorCylce();
+// motorbike.drive();
+
+
+//Encapsulation=>
+// ATM+Netbanking=>
+// Brother,Sister,Father,Wife
+// Hiding the data from the user
+// The Wrapping or binding the Data into a single unit 
+// getter=>to get or read the values from the object
+// setter=>to set or write the values 
+
+class Car{
+    setAttribute(model,year){
+        this.model=model;
+        this.year=year;
     }
-//instance method
-    getData(){
-        let personData=`
-        Name:${this.name}
-        Age:${this.age}
-        Address:${this.address}
-        `
-        console.log(personData);
+
+   getAttribute(model,year){
+         return this.model+" "+this.year;
     }
-   
-
-//static method
-    static getCompanyName(){
-        console.log(Person.CompanyName);//Amazon
-    }
-
-
-
 }
 
-class Employee extends Person{
-    static companyNew="google";
-    constructor(name,age,address,designation,salary){
-        super(name,age,address);
-        this.designation=designation;
-        this.salary=salary;
-    }
 
-//instance method
-    getData(){
-        let employeeData=`
-        Name:${this.name}   
-        Age:${this.age}
-        Address:${this.address}
-        Designation:${this.designation}
-        Salary:${this.salary}
-        `
-        console.log(employeeData);
-    }
-//static method
-    static getCompanyName(){
-        console.log(Employee.companyNew);//google
-    }
+let car1=new Car();
+car1.setAttribute("Nexon",2018);
+console.log(car1.getAttribute());
 
-}
-
-
-
-
-//create an Object of Employee
-let employee1=new Employee("jack",45,"Hyderbad","Manager",5000000);
-
-employee1.getData();//access of instance method
-Employee.getCompanyName();//access of static method
-
-
-//create an Object of Person
-let person1=new Person("Joe",35,"Hyderbad");
-person1.getData();//access of instance method
-Person.getCompanyName();//access of static method
